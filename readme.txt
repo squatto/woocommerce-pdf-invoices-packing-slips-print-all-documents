@@ -52,6 +52,10 @@ The [WooCommerce PDF Invoices & Packing Slips](https://wordpress.org/plugins/woo
 
 No documentation is required for this plugin. You can access the [WooCommerce PDF Invoices & Packing Slips plugin documentation here](http://docs.wpovernight.com/woocommerce-pdf-invoices-packing-slips/).
 
+= Can I contribute to the code? =
+Yes please! This plugin is hosted on GitHub, where you can post issues or make pull requests:
+[https://github.com/squatto/woocommerce-pdf-invoices-packing-slips-print-all](https://github.com/squatto/woocommerce-pdf-invoices-packing-slips-print-all)
+
 == Screenshots ==
 
 1. Button added to the "Create PDF" meta box on the WooCommerce order details page
