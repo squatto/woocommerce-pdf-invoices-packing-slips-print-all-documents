@@ -1,14 +1,14 @@
 <?php
 /**
  * Plugin Name:     WooCommerce PDF Invoices & Packing Slips - Print All Documents
- * Plugin URI:      https://github.com/squatto/woocommerce-pdf-invoices-packing-slips-print-all
+ * Plugin URI:      https://github.com/squatto/woocommerce-pdf-invoices-packing-slips-print-all-documents
  * Description:     Create PDF invoices and packing slips at the same time as a single PDF file, for one or more WooCommerce orders.
  * Version:         1.0.0
  * Author:          Scott Carpenter
  * Author URI:      https://github.com/squatto
  * License:         GPLv2 or later
  * License URI:     http://www.opensource.org/licenses/gpl-license.php
- * Text Domain:     woocommerce-pdf-invoices-packing-slips-print-all
+ * Text Domain:     woocommerce-pdf-invoices-packing-slips-print-all-documents
  *
  * Requires the "WooCommerce PDF Invoices & Packing Slips" plugin:
  * https://wordpress.org/plugins/woocommerce-pdf-invoices-packing-slips/
@@ -257,17 +257,17 @@ class WPO_WCPDF_PrintAll
     {
         // admin is required
         if (! is_admin()) {
-            wp_die(__('You do not have sufficient permissions to access this page.', 'woocommerce-pdf-invoices-packing-slips-print-all'));
+            wp_die(__('You do not have sufficient permissions to access this page.', 'woocommerce-pdf-invoices-packing-slips-print-all-documents'));
         }
 
         // validate the nonce
         if (empty($_GET['action']) || ! check_admin_referer($_GET['action'])) {
-            wp_die(__('You do not have sufficient permissions to access this page.', 'woocommerce-pdf-invoices-packing-slips-print-all'));
+            wp_die(__('You do not have sufficient permissions to access this page.', 'woocommerce-pdf-invoices-packing-slips-print-all-documents'));
         }
 
         // check if order_ids were provided
         if (empty($_GET['order_ids'])) {
-            wp_die(__("You haven't selected any orders", 'woocommerce-pdf-invoices-packing-slips-print-all'));
+            wp_die(__("You haven't selected any orders", 'woocommerce-pdf-invoices-packing-slips-print-all-documents'));
         }
 
         // check the user's privileges
@@ -275,7 +275,7 @@ class WPO_WCPDF_PrintAll
         $allowed = apply_filters('wpo_wcpdf_check_privs', $allowed, $this->order_ids);
 
         if (! $allowed) {
-            wp_die(__('You do not have sufficient permissions to access this page.', 'woocommerce-pdf-invoices-packing-slips-print-all'));
+            wp_die(__('You do not have sufficient permissions to access this page.', 'woocommerce-pdf-invoices-packing-slips-print-all-documents'));
         }
     }
 
@@ -310,7 +310,7 @@ class WPO_WCPDF_PrintAll
         }
 
         if (! $generated) {
-            wp_die(__('Unable to generate PDF documents for all of the selected orders.', 'woocommerce-pdf-invoices-packing-slips-print-all'));
+            wp_die(__('Unable to generate PDF documents for all of the selected orders.', 'woocommerce-pdf-invoices-packing-slips-print-all-documents'));
         }
 
         // merge PDFs into a single string of raw PDF data
