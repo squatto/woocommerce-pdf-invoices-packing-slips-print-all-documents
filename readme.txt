@@ -1,5 +1,6 @@
 === WooCommerce PDF Invoices & Packing Slips - Print All Documents ===
 Contributors: squatto
+Donate link: https://www.redcross.org/donate/donation.html
 Tags: woocommerce, pdf, invoices, packing slips, print, delivery notes, invoice, packing slip, export, email, bulk, automatic
 Requires at least: 3.5
 Tested up to: 4.9
