@@ -96,6 +96,12 @@ class WPO_WCPDF_PrintAll
      */
     private function init()
     {
+        // add the button in action column
+        add_filter('wpo_wcpdf_listing_actions', [
+            $this,
+            'sv_add_my_account_order_actions'
+        ], 10, 2);
+
         // add the meta box button
         add_filter('wpo_wcpdf_meta_box_actions', [$this, 'add_meta_box_action'], 10, 2);
 
@@ -110,6 +116,17 @@ class WPO_WCPDF_PrintAll
 
         // add "Settings" link to the plugin admin row
         add_filter('plugin_action_links_' . $this->plugin_basename, [$this, 'add_settings_link']);
+    }
+
+    public function add_all_pdf_order_actions($actions, $order)
+    {
+        unset($actions);
+        $actions['all'] = [
+            'url'  => wp_nonce_url(admin_url("admin-ajax.php?action=generate_wpo_wcpdf_all&order_ids=$order->id"), 'generate_wpo_wcpdf_all'),
+            'alt'   => 'Print All PDF Documents',
+            'img' => WPO_WCPDF()->plugin_url() . "/assets/images/packing-slip.png",
+        ];
+        return $actions;
     }
 
     public function enqueue_admin_scripts()
